@@ -1,0 +1,25 @@
+{
+  "name": "ktv-system",
+  "productName": "KTV-System",
+  "version": "1.0.0",
+  "description": "ktv-system",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rindy",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.0.3",
+    "director": "^1.2.8",
+    "gulp": "^3.9.0",
+    "gulp-postcss": "^6.0.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.6",
+    "mysql": "^2.9.0",
+    "postcss-mixins": "^1.0.2",
+    "postcss-nested": "^1.0.0",
+    "postcss-simple-vars": "^1.0.1",
+    "webpack": "^1.12.2"
+  }
+}

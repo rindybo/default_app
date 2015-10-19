@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="dist/css/reset.css">
+    <link rel="stylesheet" href="dist/css/global.css">
+    <link rel="stylesheet" href="dist/css/index.css">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <tabs-menu model="{{data_tabs_menu}}"></tabs-menu>
+            <nav>当前位置：首页</nav>
+        </header>
+        <aside v-if="data_side_menu">
+            <side-menu model="{{data_side_menu}}"></side-menu>
+        </aside>
+        <section v-class="has-side-menu: data_side_menu">
+            <component is="{{currentView}}">
+        </section>
+    </div>
+
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="node_modules/vue/dist/vue.min.js"></script>
+    <script type="text/javascript" src="dist/js/index.js"></script>
+
+</body>
+
+</html>
