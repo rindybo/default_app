@@ -1,4 +1,4 @@
-/// <reference path="../../node_modules/vue/dist/vue.js" />
+/// <reference path="../node_modules/vue/dist/vue.js" />
 
 require('./module/TabsMenu.js');
 require('./module/SideMenu.js');
@@ -6,9 +6,6 @@ require('./module/SideMenu.js');
 
 var Config = require('./config.js');
 var BaseEntry = require('./module/BaseEntry.js');
-
-var pa = require('./module/PageA.js');
-var pb = require('./module/PageB.js');
 
 var entry = BaseEntry.extend({
     init: function (_context) {
@@ -34,22 +31,15 @@ var entry = BaseEntry.extend({
         this.$app.$data.currentView= "pageB"
     },
     $routers: function () {
-        var self = this;
-        return {
-            '/home': function () {
-                self.page_home();
-            },
-            '/setting': function () {
-                self.page_setting();
-            }
-        };
-    },
-    page_home: function () {
-        this.$app.$data.currentView = "pageA";
-    },
-    page_setting: function () {
-        console.log(this)
-        this.$app.$data.currentView = "pageB";
+        
+        this.
+        $action('/home',function($app){
+            $app.$data.currentView = "pageA";
+        })
+        .$action('/setting',function($app){
+             $app.$data.currentView = "pageB";
+        })
+        
     }
 });
 
