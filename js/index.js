@@ -25,7 +25,7 @@ var Entry = BaseEntry.extend({
             $app.$data.currentView = "page-b";
 
             window.main_ipc.emit('test', 111, new Date().toISOString()).then(function(rs){
-                alert(rs)
+                console.log(rs)
             });
             
             

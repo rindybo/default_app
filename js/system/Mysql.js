@@ -6,12 +6,17 @@ var connection = mysql.createConnection({
     database: 'db_ktv'
 });
 
-connection.connect();
 
-connection.query('select * from user', function (err, rows, fields) {
-    if (err) throw err;
 
-    console.log('The solution is: ', rows);
-});
+module.exports = function (sql, callback) {
+    connection.connect();
 
-connection.end();
+    connection.query(sql, function (err, rows, fields) {
+        
+        if (err) throw err;
+
+        callback(rows,fields);
+    });
+
+    connection.end();
+}

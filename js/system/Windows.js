@@ -27,8 +27,6 @@ window.main_ipc = {
 		} else if (args.length === 2 && typeof args[0] === 'string') {
 			MessageQueue[args[0]] = args[1];
 		}
-
-		console.log(MessageQueue)
 	},
 	emit: function () {
 		var name,
@@ -41,14 +39,14 @@ window.main_ipc = {
 			if (MessageQueue[name]) {
 
 				return new Promise(function (resolve, reject) {
-
-					resolve(MessageQueue[name].apply(window, [].slice.call(args, 1)));
+					
+					MessageQueue[name].apply({ returnValue: resolve }, [].slice.call(args, 1));
 
 				});
 
 			}
 		} else {
-			throw new TypeError('main_ipc:'+name+' is undefine');
+			throw new TypeError('main_ipc:' + name + ' is undefine');
 		}
 	}
 } 
