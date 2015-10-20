@@ -3,16 +3,17 @@
         "tabs": [
           {
               "name": "控制台",
-              "active": false,
+              "active": true,
               "action": "#/home",
           },
           {
               "name": "设置",
-              "active": true,
+              "active": false,
               "action": "#/setting"
           },
           {
               "name": "报表",
+              "active": false,
               "action": "#/report"
           },
           {

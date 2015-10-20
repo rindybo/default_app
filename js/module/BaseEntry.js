@@ -1,6 +1,11 @@
-﻿var Linwork = require('./Linwork');
+﻿require('./component/_TabsMenu');
+require('./component/_SideMenu');
+require('./component/_Rooms');
 
+var Linwork = require('./Linwork');
 var Router = require('director').Router;
+
+
 var routers = {};
 
 var BaseEntry = Linwork.define({
@@ -9,7 +14,6 @@ var BaseEntry = Linwork.define({
         this.$routers && this.$routers();
         
         setTimeout(function () {
-            console.log(routers)
             Router(routers).init();
         }, 1);
     },

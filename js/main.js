@@ -21,10 +21,16 @@ var app = {
 	}
 };
 
-//document.getElementById('j-logout').onclick = function () {
-//    app.logout();
-//}
+// window.sendToMain = function(){
+// 	//dialog.showOpenDialog({ properties: [ 'openFile', 'openDirectory', 'multiSelections' ]});
+// }
 
-
+window.main_ipc.on({
+	test:function(){
+		
+		return 'got'
+		
+	}
+});
 
 
