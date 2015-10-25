@@ -1,7 +1,7 @@
 ﻿var tmpl = [
     '<div class="head-menu">',
     '    <ul>',
-    '        <li v-repeat="list in model"><a href="{{list.action}}" target="_self" v-on="click: navgation(list)" v-class="active: list.active">{{list.name}}</a></li>',
+    '        <li v-repeat="list in model"><a href="{{list.link}}" target="_self" v-on="click: navgation(list)" v-class="active: list.active">{{list.name}}</a></li>',
     '    </ul>',
     '</div>'
 ];

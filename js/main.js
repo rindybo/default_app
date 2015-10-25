@@ -25,9 +25,15 @@ var app = {
 var uuid = require('node-uuid');
 
 window.main_ipc.on({
-	test: function () {
+	exeSql:function(sql){
 		
-		mysql('insert into rooms (guid,name) values("'+uuid.v1()+'","456")', function (rows, field) {
+		mysql('select * from menu',function(rows,field){
+			this.returnValue(rows);
+		}.bind(this));
+	},
+	GetMenu: function () {
+		
+		mysql('select * from menu', function (rows, field) {
 
 			this.returnValue(rows)
 

@@ -7,16 +7,18 @@ var connection = mysql.createConnection({
 });
 
 
+connection.connect(function(err) {
+    if(err){
+        console.error(err);
+    }
+});
+
 
 module.exports = function (sql, callback) {
-    connection.connect();
-
     connection.query(sql, function (err, rows, fields) {
         
         if (err) throw err;
 
         callback(rows,fields);
     });
-
-    connection.end();
 }
